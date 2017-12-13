@@ -69,7 +69,7 @@ header {
       background-color: @background_black_90;
       padding: 0 2rem;
       display: inline-block;
-      animation: 0.3s ease 0.1s 1 slideInFromLeft;
+      animation: 0.3s ease 0s 1 slideInFromLeft;
     }
   }
 }
@@ -112,27 +112,30 @@ div#columns {
     @media(min-width: 700px) {
       margin: 0 4rem 5rem;
     }
-
-    h2 {
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      margin-bottom: 0.1rem;
-      margin-top: 0.4rem;
-      color: @red;
+    
+    .h2-container {
       background-color: @background_black_90;
       padding: 0.3rem 1rem;
       display: inline-block;
       opacity: 0.9;
+      margin-bottom: 0.1rem;
+      margin-top: 0.4rem;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      color: @red;
       font-size: 2.8em;
+      margin: 0px;
     }
 
     ul {
       padding: 0;
       margin: 0;
+      list-style: none;
 
       li {
-        display: block;
-        list-style: none;
         letter-spacing: 0.02rem;
         margin-top: 1rem;
       }
@@ -144,6 +147,7 @@ div#columns {
       text-decoration: none;
       opacity: 0.8;
       font-size: 2.5em;
+      padding: 0.2rem 1rem;
 
       &:visited {
         opacity: 0.8;
@@ -153,7 +157,6 @@ div#columns {
         color: @red;
         background: black;
         opacity: 1;
-        padding: 0.2rem 1rem;
       }
 
       &:active {
