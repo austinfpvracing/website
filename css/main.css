@@ -20,22 +20,28 @@ html, body {
     height: 100%;
 }
 
-header {
+body {
     background-image: url(../img/takeoff.png);
-    height: 100%;
     min-height: 100%;
-    position: relative;
     background-position: bottom;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Raleway', sans-serif;    
 }
 
-header:before {
+header {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+body:before {
     opacity: 0.5;
     background: linear-gradient(to bottom right, rgba(194,91,134,0.7) 0%, rgba(66,148,208,0.7) 100%),
         url(../img/square.png) repeat;
-    position: absolute;
+    background-attachment: fixed;
+    position: fixed;
     z-index: 0;
     top: 0;
     left: 0;
@@ -74,14 +80,14 @@ header h1 span {
     padding: 0 0.5rem;
     display: inline-block;
 
-    animation: 0.6s ease-out 0s 1 slideInFromLeft;
+    animation: 0.4s ease-out 0s 1 slideInFromLeft;
 }
 
 header #content {
     position: absolute;
     width: 90%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     top: 40%;
     z-index: 2000;
 }
@@ -132,57 +138,14 @@ header #content section a:active {
 }
 
 @media only screen and (max-width: 800px) {
+    header h1 {
+        top: 10%;
+    }
     header #content section {
         float: none;
         width: 100%;
         display: block;
+        text-align: center;
+        padding: 0;
     }
-
-    header #content section h2 {
-        font-size: 0.8rem;
-    }
-
-    header #content section ul li {
-        font-size: 0.6rem;
-        height: 0.95rem;
-    }
-}
-
-footer {
-    position: absolute;
-    bottom: 5px;
-    width: 100%;
-    height: 2em;
-    font-size: 0.3rem;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-}
-
-footer .left {
-    left: 3%;
-    bottom: 0.2rem;
-    position: absolute;
-}
-footer .right {
-    right: 3%;
-    bottom: 0.2rem;
-    position: absolute;
-}
-
-footer a, footer a:visited, footer a:active {
-    color: rgba(255,255,255, 1);
-    text-decoration: none;
-    padding: 0.1rem;
-    opacity: 0.6;
-}
-
-footer .left a, footer .left a:visited, footer .left a:active {
-    opacity: 1.0;
-}
-
-footer a:active, footer a:hover {
-    color: #ed1c24;
-    background: black;
-    opacity: 1;
 }
