@@ -7,10 +7,12 @@
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(400%);
+	transform: translateX(400%);
+	visibility: hidden;
   }
   100% {
-    transform: translateX(0);
+	transform: translateX(0);
+	visibility: visible;
   }
 }
 
@@ -24,7 +26,7 @@ html {
 
 body {
   color: @white;
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
   height: 100%;
   min-height: 100%;
@@ -68,8 +70,9 @@ header {
       color: @red;
       background-color: @background_black_90;
       padding: 0 2rem;
-      display: inline-block;
-      animation: 0.3s ease 0s 1 slideInFromLeft;
+	  display: inline-block;
+	  visibility: hidden;
+      animation: 0.3s ease 0s 1 slideInFromLeft forwards;
     }
   }
 }
@@ -92,27 +95,37 @@ div#columns {
 
   margin: 50px 0 0;
 
-  @media(min-width: 700px) {
-    -webkit-flex-direction: row;
-    flex-direction: row;
+  @media(min-width: 860px) {
+	-webkit-flex-direction: row;
+	flex-direction: row;
   }
 
-  @media(min-width: 1000px) {
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    
-    margin-top: 100px;
+  @media(min-width: 1200px) {
   }
 
   figure {
     margin: 0 0 5rem;
     padding: 0.05rem;
-    text-align: center;
+	text-align: center;
+	visibility: hidden;
 
-    @media(min-width: 700px) {
-      margin: 0 4rem 5rem;
-    }
-    
+    @media(min-width: 860px) {
+		flex: 0 1 46%;
+	}
+	
+	@media(min-width: 1200px) {
+		flex: 0 1 31%;
+	}
+	
+	animation: 0.3s cubic-bezier(.22,.8,.33,.9) 0s 1 slideInFromLeft forwards;
+
+	&#clubs { animation-delay: 50ms; }
+	&#chapters { animation-delay: 75ms; }
+	&#communities { animation-delay: 125ms; }
+	&#business { animation-delay: 175ms; }
+	&#discounts { animation-delay: 100ms; }
+	&#photos { animation-delay: 190ms; }
+
     .h2-container {
       background-color: @background_black_90;
       padding: 0.3rem 1rem;
