@@ -2,6 +2,7 @@
 @red: #ed1c24;
 @blue: blue;
 @font_family_1: 'Raleway', sans-serif;
+@font_family_2: bebas-neue, sans-serif;
 @background_black_90: rgba(0,0,0, 0.9);
 @background_white_10: rgba(255,255,255, 0.1);
 
@@ -36,7 +37,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: @font_family_1;
   z-index: 10;
 
   &:before {
@@ -54,25 +54,27 @@ body {
 }
 
 header {
+  text-align: center;
+
   h1 {
-    margin: 0 auto;
-    padding-top: 15%;
-    width: 100%;
-    text-align: center;
+    display: inline-block;
+    margin: 1em auto 0;
+    font-family: @font_family_2;
+    border: 10px solid @red;
+    padding: 0px 20px;
+    color: white;
     text-transform: uppercase;
-    font-weight: 700;
-    color: @white;
-    letter-spacing: 0.1rem;
-    display: block;
-    font-size: 5em;
+    font-size: 5.1rem;
+    letter-spacing: 0.22rem;
+    width: auto;
+    background: black;
+
+    @media(min-width: 860px) {
+        font-size: 6rem;
+    }
 
     span {
       color: @red;
-      background-color: @background_black_90;
-      padding: 0 2rem;
-	  display: inline-block;
-	  visibility: hidden;
-      animation: 0.3s ease 0s 1 slideInFromLeft forwards;
     }
   }
 }
@@ -90,14 +92,15 @@ div#columns {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
 
-  margin: 50px 0 0;
+  margin: 50px 5% 0;
 
   @media(min-width: 860px) {
 	-webkit-flex-direction: row;
-	flex-direction: row;
+    flex-direction: row;
+    margin: 50px 10% 0;
   }
 
   @media(min-width: 1200px) {
@@ -106,8 +109,8 @@ div#columns {
   figure {
     margin: 0 0 5rem;
     padding: 0.05rem;
-	text-align: center;
-	visibility: hidden;
+    text-align: center;
+    background-color: rgba(0,0,0, 0.77);
 
     @media(min-width: 860px) {
 		flex: 0 1 46%;
@@ -116,18 +119,8 @@ div#columns {
 	@media(min-width: 1200px) {
 		flex: 0 1 31%;
 	}
-	
-	animation: 0.3s cubic-bezier(.22,.8,.33,.9) 0s 1 slideInFromLeft forwards;
-
-	&#clubs { animation-delay: 50ms; }
-	&#chapters { animation-delay: 75ms; }
-	&#communities { animation-delay: 125ms; }
-	&#business { animation-delay: 175ms; }
-	&#discounts { animation-delay: 190ms; }
-	&#photos { animation-delay: 100ms; }
 
     .h2-container {
-      background-color: @background_black_90;
       padding: 0.3rem 1rem;
       display: inline-block;
       opacity: 0.9;
@@ -137,16 +130,19 @@ div#columns {
 
     h2 {
       text-transform: uppercase;
-      letter-spacing: 0.05rem;
+      letter-spacing: 0.15rem;
       color: @red;
-      font-size: 2.8em;
+      font-size: 3.2em;
       margin: 0px;
+      font-family: @font_family_2;
     }
 
     ul {
       padding: 0;
       margin: 0;
+      margin-bottom: 0.9rem;
       list-style: none;
+      font-family: @font_family_1;
 
       li {
         letter-spacing: 0.02rem;
@@ -167,14 +163,14 @@ div#columns {
       }
 
       &:hover {
-        color: @red;
-        background: black;
+        color: black;
+        background: rgba(255,255,255, 0.6);
         opacity: 1;
       }
 
       &:active {
-        color: @red;
-        background: black;
+        color: black;
+        background: rgba(255,255,255, 0.6);
         opacity: 1;
       }
     }
