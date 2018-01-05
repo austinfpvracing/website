@@ -8,12 +8,12 @@
 
 @keyframes slideInFromLeft {
   0% {
-	transform: translateX(400%);
-	visibility: hidden;
+	  transform: translateX(400%);
+	  visibility: hidden;
   }
   100% {
-	transform: translateX(0);
-	visibility: visible;
+	  transform: translateX(0);
+	  visibility: visible;
   }
 }
 
@@ -70,7 +70,7 @@ header {
     background: black;
 
     @media(min-width: 860px) {
-        font-size: 6rem;
+      font-size: 6rem;
     }
 
     span {
@@ -103,9 +103,6 @@ div#columns {
     margin: 50px 10% 0;
   }
 
-  @media(min-width: 1200px) {
-  }
-
   figure {
     margin: 0 0 5rem;
     padding: 0.05rem;
@@ -113,12 +110,12 @@ div#columns {
     background-color: rgba(0,0,0, 0.77);
 
     @media(min-width: 860px) {
-		flex: 0 1 46%;
-	}
+      flex: 0 1 46%;
+    }
 	
-	@media(min-width: 1200px) {
-		flex: 0 1 31%;
-	}
+    @media(min-width: 1200px) {
+      flex: 0 1 31%;
+    }
 
     .h2-container {
       padding: 0.3rem 1rem;
@@ -172,6 +169,12 @@ div#columns {
         color: black;
         background: rgba(255,255,255, 0.6);
         opacity: 1;
+      }
+    }
+
+    &#discounts {
+      a span {
+        color: @red;
       }
     }
   }
