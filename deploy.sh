@@ -1,5 +1,11 @@
+# Compile less
+lessc css/main.less public/css/main.css
+
+# Move html (nothing to compile yet)
+cp index.html public/index.html 
+
 # Sync files
-aws s3 sync . s3://austinfpv.racing \
+aws s3 sync public s3://austinfpv.racing \
     --exclude="*.git*" \
     --exclude="*.DS_Store" \
     --exclude="deploy.sh" \
