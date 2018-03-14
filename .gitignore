@@ -2,3 +2,4 @@ css/main.css
 public/css/main.css
 public/index.html
 *.DS_Store
+node_modules
