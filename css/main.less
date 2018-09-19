@@ -180,9 +180,22 @@ div#columns {
       }
     }
 
-    &#discounts {
+    &#discounts, &#local-business, &#clubs {
       a span {
-        color: @red;
+        font-size: 0.7em;
+        line-height: 1.3em;
+        vertical-align: middle;
+        margin-bottom: 0.2em;
+        display: inline-block;
+
+        &.location {
+          color: @red;
+          margin-left: 1em;
+        }
+
+        &.code {
+          color: @red;
+        }
       }
     }
   }
