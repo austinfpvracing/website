@@ -5,19 +5,19 @@ mkdir -p public
 lessc css/main.less public/css/main.css
 
 # Move html, img, js
-cp index.html public/index.html 
+cp index.html public/index.html
 cp -R img public
 cp -R js public
 
 # Sync files
-aws s3 sync public s3://austinfpv.racing \
+aws s3 --profile personal sync public s3://austinfpv.racing \
     --exclude="*.git*" \
     --exclude="*.DS_Store" \
     --exclude="deploy.sh" \
     --exclude="*.less"
 
 # Invalidate cache
-aws cloudfront create-invalidation --distribution-id E248HUNS5N052F --paths / /index.html /css/*
+aws --profile personal cloudfront create-invalidation --distribution-id E248HUNS5N052F --paths / /index.html /css/*
 
 # Delete build directory
 rm -rf public
